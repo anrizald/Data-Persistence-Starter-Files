@@ -37,6 +37,11 @@ public class MainManager : MonoBehaviour
                 brick.onDestroyed.AddListener(AddPoint);
             }
         }
+
+        if (DataManager.Instance != null)
+        {
+            GameObject.Find("Name").GetComponent<Text>().text = "Name: " + DataManager.Instance.NameText;
+        }
     }
 
     private void Update()
