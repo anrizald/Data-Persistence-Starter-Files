@@ -3,13 +3,13 @@ using System.Collections;
 using System;
 using UnityEngine.UI;
 using TMPro;
+using System.IO;
 
 public class DataManager : MonoBehaviour
 {
     public static DataManager Instance;
     public string NameText;
-    [SerializeField]
-    public TMP_InputField textField;
+    public int Score;
 
     private void Awake()
     {
@@ -21,19 +21,5 @@ public class DataManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-    }
-
-    [System.Serializable]
-    class SaveData
-    {
-        public string NameText;
-    }
-
-    public void onValueChanged()
-    {
-        string foo = textField.text;
-        NameText = foo;
-
-
     }
 }
